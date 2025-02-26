@@ -6,7 +6,20 @@
     <title>Test Page</title>
 </head>
 <body>
-    <h1>Testing Index Page</h1>
-    <iframe src="../index.html" width="800" height="400" style="border:1px solid black;"></iframe>
+    <script>
+        fetch('index.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('❌ index.html failed to load: ' + response.status);
+                }
+                return response.text();
+            })
+            .then(html => {
+                document.write('<h2>✅ index.html loaded successfully</h2>');
+            })
+            .catch(error => {
+                document.write('<h2>' + error.message + '</h2>');
+            });
+    </script>
 </body>
 </html>
