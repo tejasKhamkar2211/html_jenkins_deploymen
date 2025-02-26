@@ -3,97 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Form Validation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ff6a00, #ee0979);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .test-container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-            width: 350px;
-            text-align: center;
-        }
-
-        .test-container h2 {
-            margin-bottom: 20px;
-            color: #ee0979;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-        }
-
-        .error {
-            color: red;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .success {
-            color: green;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #ee0979;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background: #c20062;
-        }
-    </style>
+    <title>Index Page</title>
 </head>
 <body>
-
-    <div class="test-container">
-        <h2>Test Email Validation</h2>
-        <form id="testForm">
-            <input type="email" id="emailInput" placeholder="Enter Your Email" required>
-            <p id="message" class="error"></p>
-            <button type="submit">Test Email</button>
-        </form>
-    </div>
-
-    <script>
-        document.getElementById("testForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            let emailInput = document.getElementById("emailInput").value;
-            let message = document.getElementById("message");
-
-            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-            if (emailPattern.test(emailInput)) {
-                message.textContent = "Valid email!";
-                message.className = "success";
-            } else {
-                message.textContent = "Invalid email format!";
-                message.className = "error";
-            }
-        });
-    </script>
-
+    <h1>Welcome to Index Page</h1>
+    <p>This is a simple HTML page for testing.</p>
 </body>
 </html>
