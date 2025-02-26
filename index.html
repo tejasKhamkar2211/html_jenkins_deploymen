@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylish Form</title>
+    <title>Test Form Validation</title>
     <style>
-        /* Background Design */
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #00c6ff, #0072ff);
+            background: linear-gradient(to right, #ff6a00, #ee0979);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,8 +15,7 @@
             margin: 0;
         }
 
-        /* Form Container */
-        .form-container {
+        .test-container {
             background: white;
             padding: 30px;
             border-radius: 10px;
@@ -26,60 +24,76 @@
             text-align: center;
         }
 
-        /* Form Heading */
-        .form-container h2 {
+        .test-container h2 {
             margin-bottom: 20px;
-            color: #0072ff;
+            color: #ee0979;
         }
 
-        /* Input Fields */
-        .form-container input {
+        input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
             outline: none;
-            transition: 0.3s;
         }
 
-        /* Input Field Focus Effect */
-        .form-container input:focus {
-            border-color: #0072ff;
-            box-shadow: 0px 0px 8px rgba(0, 114, 255, 0.5);
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
         }
 
-        /* Submit Button */
-        .form-container button {
+        .success {
+            color: green;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        button {
             width: 100%;
             padding: 12px;
-            background: #0072ff;
+            background: #ee0979;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: 0.3s;
         }
 
-        /* Hover Effect for Button */
-        .form-container button:hover {
-            background: #005ecb;
+        button:hover {
+            background: #c20062;
         }
-
     </style>
 </head>
 <body>
 
-    <div class="form-container">
-        <h2>Contact Us</h2>
-        <form action="#" method="POST">
-            <input type="text" name="name" placeholder="Enter Your Name" required>
-            <input type="email" name="email" placeholder="Enter Your Email" required>
-            <input type="text" name="subject" placeholder="Enter Subject" required>
-            <button type="submit">Submit</button>
+    <div class="test-container">
+        <h2>Test Email Validation</h2>
+        <form id="testForm">
+            <input type="email" id="emailInput" placeholder="Enter Your Email" required>
+            <p id="message" class="error"></p>
+            <button type="submit">Test Email</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById("testForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let emailInput = document.getElementById("emailInput").value;
+            let message = document.getElementById("message");
+
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (emailPattern.test(emailInput)) {
+                message.textContent = "Valid email!";
+                message.className = "success";
+            } else {
+                message.textContent = "Invalid email format!";
+                message.className = "error";
+            }
+        });
+    </script>
 
 </body>
 </html>
