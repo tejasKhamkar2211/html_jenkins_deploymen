@@ -3,74 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Validation Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            width: 50%;
-            margin: auto;
-        }
-        input {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background: #28a745;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background: #218838;
-        }
-    </style>
+    <title>Test Page</title>
 </head>
 <body>
-
-    <div class="container">
-        <h2>Email Validation Test</h2>
-        <form id="emailForm">
-            <input type="text" name="email" placeholder="Enter your email" required>
-            <button type="submit">Validate Email</button>
-        </form>
-        <p id="result"></p>
-    </div>
-
-    <script>
-        function isValidEmail(email) {
-            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return emailRegex.test(email);
-        }
-
-        document.getElementById("emailForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            let email = document.querySelector("input[name='email']").value;
-            let result = document.getElementById("result");
-
-            if (!isValidEmail(email)) {
-                result.innerHTML = "❌ Invalid Email Address!";
-                result.style.color = "red";
-                return;
-            }
-
-            result.innerHTML = "✅ Email format is correct!";
-            result.style.color = "green";
-        });
-    </script>
-
+    <h1>Testing Index Page</h1>
+    <iframe src="../index.html" width="800" height="400" style="border:1px solid black;"></iframe>
 </body>
 </html>
